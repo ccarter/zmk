@@ -255,6 +255,7 @@ int zmk_ble_prof_select(uint8_t index) {
     }
 
     last_profile = active_profile;
+    raise_profile_changed_event();
     LOG_DBG("profile %d", index);
     if (active_profile == index) {
         return 0;
@@ -265,7 +266,7 @@ int zmk_ble_prof_select(uint8_t index) {
 
     update_advertising();
 
-    raise_profile_changed_event();
+    
 
     return 0;
 };
