@@ -256,8 +256,8 @@ int zmk_ble_prof_select(uint8_t index) {
 
     LOG_DBG("profile %d", index);
     if (active_profile == index) {
-      last_profile = active_profile;
-      return 0;
+        last_profile = active_profile;
+        return 0;
     }
 
     last_profile = active_profile;
