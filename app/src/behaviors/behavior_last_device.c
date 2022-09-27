@@ -50,10 +50,8 @@ static const struct behavior_driver_api behavior_last_device_driver_api = {
 };
 
 static void update_last_device_ble_index(uint8_t profile) {
-    if (!zmk_ble_profile_is_open(profile)) {
-        last_device = profile;
-        LOG_DBG("Last device set to %d", last_device);
-    }
+    last_device = profile;
+    LOG_DBG("Last device set to %d", last_device);
 };
 
 static int last_device_listener(const zmk_event_t *eh) {
