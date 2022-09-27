@@ -80,7 +80,7 @@ static int last_device_listener(const zmk_event_t *eh) {
         }
     }
     /*if (as_zmk_ble_active_profile_changed(eh) != NULL &&*/
-    if zmk_endpoints_selected() == ZMK_ENDPOINT_BLE) {
+    if (zmk_endpoints_selected() == ZMK_ENDPOINT_BLE) {
 	LOG_DBG("UPDATE LAST DEVICE BLE INDEX %d", zmk_ble_last_profile_index());      
         update_last_device_ble_index(zmk_ble_last_profile_index());
     }
