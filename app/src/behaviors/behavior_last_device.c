@@ -43,7 +43,10 @@ static int on_keymap_binding_pressed(struct zmk_behavior_binding *binding,
     return ZMK_BEHAVIOR_OPAQUE;
 }
 
-static int behavior_last_device_init(const struct device *dev) { return 0; }
+static int behavior_last_device_init(const struct device *dev) {
+  last_device = 0;
+  return 0;
+}
 
 static const struct behavior_driver_api behavior_last_device_driver_api = {
     .binding_pressed = on_keymap_binding_pressed,
