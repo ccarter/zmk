@@ -598,7 +598,7 @@ static int zmk_ble_init(const struct device *_arg) {
     bt_conn_auth_cb_register(&zmk_ble_auth_cb_display);
 
     zmk_ble_ready(0);
-    last_profile = 0
+    last_profile = 0;
 
     return 0;
 }
