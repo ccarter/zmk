@@ -254,13 +254,12 @@ int zmk_ble_prof_select(uint8_t index) {
         return -ERANGE;
     }
 
+    last_profile = active_profile;
     LOG_DBG("profile %d", index);
     if (active_profile == index) {
-        last_profile = active_profile;
         return 0;
     }
 
-    last_profile = active_profile;
     active_profile = index;
     ble_save_profile();
 
